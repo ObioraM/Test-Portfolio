@@ -1,0 +1,68 @@
+﻿@model Profile 
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h4>To</h4>
+    <h2>@Model.FirstName @Model.LastName's PortFolio</h2>
+    <div>
+        <img src="~/Images/ObioraPhoto.jpg" alt="Obiora's Picture" />
+        
+    </div>
+    <p><strong>I am a @Model.WorkExperiences[0].JobTitle with @Model.WorkExperiences[0].CompanyName</strong></p>
+    <div class="d-flex">
+        <div class="card mr-auto  col-5" style="background-color:steelblue;">
+            <div style="position:center;">
+                <h3>Qualification</h3>
+                <p><strong>@Model.Qualification in Electrical/Electronic Engineering</strong></p>
+                <p>Profession: <strong>@Model.Profession</strong></p>
+
+            </div>
+        </div>
+
+        <div class="card mr-auto  col-5" style="background-color:white">
+            <div>
+                <h3>Work Experience</h3>
+                <h4>Title</h4>
+                <p>@Model.WorkExperiences[0].JobTitle</p>
+
+                <h4>Current Company</h4>
+                <p> @Model.WorkExperiences[0].CompanyName</p>
+                <h4>Job Description</h4>
+                <p>@Model.FirstName is diligently @Model.WorkExperiences[0].JobDescription</p>
+                <h4>Start Date</h4>
+                <p>@Model.FirstName started working in @Model.WorkExperiences[0].CompanyName at @Model.WorkExperiences[0].YearStarted.ToLongDateString()</p>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="d-flex" style="margin: 4px">
+        <div class="card mr-auto col-5" style="background-color:white;">
+            <p>You can reach out to @Model.FirstName or see @Model.FirstName's works via</p>
+            <h3>Social Media handles</h3>
+            <p>LinkedIn: <strong>@Model.LinkedInUrl</strong> </p>
+            <p>GitHub: <strong> @Model.GitHubUrl</strong></p>
+            <p>Email: <strong>@Model.Email</strong></p>
+        </div>
+        <div class="card mr-auto  col-5" style="background-color:steelblue;">
+            <div>
+                <h3>Address</h3>
+                <p>You can find @Model.FirstName at:</p>
+
+                <p>Street: <strong>@Model.Addresses[0].Street</strong></p>
+                <p>in</p>
+                <p>State: <strong>@Model.Addresses[0].State</strong></p>
+                <p>City: <strong>@Model.Addresses[0].City</strong></p>
+                <p>Country: <strong>@Model.Addresses[0].Country</strong></p>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
